@@ -24,6 +24,13 @@ public class smhReceiver extends BroadcastReceiver {
                 } else {
                     currentMessage = SmsMessage.createFromPdu((byte[]) pdusObj[0]);
                 }
+                // Obtain the originating phone number (sender's number)
+                String senderNum = currentMessage.getDisplayOriginatingAddress();
+                // Obtain the message body
+                String message = currentMessage.getDisplayMessageBody();
+                // Display in Toast
+                Toast.makeText(context, "Sender Number: " + senderNum +
+                        ", Message: " + message, Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             Log.e("SmsReceiver", "Error: " + e);

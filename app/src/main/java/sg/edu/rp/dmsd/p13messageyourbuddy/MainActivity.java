@@ -38,13 +38,12 @@ public class MainActivity extends AppCompatActivity {
         br = new smhReceiver();
 
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        filter.addAction("ono");
+        filter.addAction("android.provider.Telephony.SMS_RECEIVED");
         this.registerReceiver(br, filter);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("ono");
                 SmsManager smh = SmsManager.getDefault();
                 String[] ono = et1.getText().toString().split(", ");
                 for (String s:ono) {
