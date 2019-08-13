@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P13MessageYourBuddy</string>
+    <string name="to">To:</string>
+    <string name="content">Content:</string>
+    <string name="send">SEND</string>
+    <string name="two">SEND VIA MESSAGES</string>
+</resources>
