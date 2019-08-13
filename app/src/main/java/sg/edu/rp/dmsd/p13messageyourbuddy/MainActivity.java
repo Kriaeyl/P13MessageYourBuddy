@@ -55,17 +55,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("smsto:" + et1.getText().toString()));
-                intent.putExtra("sms_body", et2.getText().toString());
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                }
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("smsto:" + et1.getText().toString()));
+            intent.putExtra("sms_body", et2.getText().toString());
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
             }
-        });
-    }
+        }
+    });
+}
 
     @Override
     protected void onDestroy() {
